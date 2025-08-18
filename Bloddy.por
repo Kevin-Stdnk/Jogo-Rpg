@@ -1,0 +1,299 @@
+programa {
+  inclua biblioteca Util --> u
+  funcao inicio() {
+    cadeia nome, nomeguerreiro, classenom, titulo, arma
+    inteiro classe, dinheiro
+    inteiro sttsvida, sttshonra, sttsforca, sttsinteligencia, sttsmagica,weapondamage,vida
+    vida = 10
+    titulo=" ▄▄▄▄    ██▓     ▒█████  ▓█████▄ ▓█████▄▓██   ██▓\n▓█████▄ ▓██▒    ▒██▒  ██▒▒██▀ ██▌▒██▀ ██▌▒██  ██▒\n▒██▒ ▄██▒██░    ▒██░  ██▒░██   █▌░██   █▌ ▒██ ██░\n▒██░█▀  ▒██░    ▒██   ██░░▓█▄   ▌░▓█▄   ▌ ░ ▐██▓░\n░▓█  ▀█▓░██████▒░ ████▓▒░░▒████▓ ░▒████▓  ░ ██▒▓░\n░▒▓███▀▒░ ▒░▓  ░░ ▒░▒░▒░  ▒▒▓  ▒  ▒▒▓  ▒   ██▒▒▒ \n▒░▒   ░ ░ ░ ▒  ░  ░ ▒ ▒░  ░ ▒  ▒  ░ ▒  ▒ ▓██ ░▒░ \n ░    ░   ░ ░   ░ ░ ░ ▒   ░ ░  ░  ░ ░  ░ ▒ ▒ ░░  \n ░          ░  ░    ░ ░     ░       ░    ░ ░     \n      ░                   ░       ░      ░ ░     "
+
+
+    sttsvida=5
+    //escolha 1 / nome
+    escreva("Insira seu nome : ")
+    leia(nome)
+    faca{
+      escreva("Qual seu apelido (classe)?")
+    escreva("\n1 - ",nome,", o Exilado / sem classe\n2 - ",nome,", o Carrasco / Barbaro\n3 - ",nome,", o Arcebispo / Feiticeiro\n4 - ",nome,", o Arauto / Cavaleiro\n")
+    leia(classe)
+    //escolha 2 classe
+    escolha(classe){
+      caso 1:
+      classenom="Sem Classe"
+      nomeguerreiro=nome+", o Exilado"
+      arma="Nenhuma"
+      escreva("Seu nome de batalha apartir de agora é ",nomeguerreiro)
+      sttshonra=1
+      sttsforca=1
+      sttsinteligencia=5
+      sttsmagica=1
+      pare
+      caso 2:
+      classenom="Barbaro"
+      nomeguerreiro=nome+", o Carrasco"
+      arma="Machado de dois gumes"
+      escreva("Seu nome de batalha apartir de agora é ",nomeguerreiro)
+      sttshonra=0
+      sttsforca=5
+      sttsinteligencia=1
+      sttsmagica=0
+      pare
+      caso 3:
+      classenom="Xamã"
+      nomeguerreiro=nome+", o Arcebispo"
+      arma="Lança velha enfetiçada"
+      escreva("\nSeu nome de batalha apartir de agora é ",nomeguerreiro)
+      sttshonra=1
+      sttsforca=0
+      sttsinteligencia=3
+      sttsmagica=5
+      pare
+      caso 4:
+      classenom="Cavaleiro"
+      nomeguerreiro=nome+", o Arauto"
+      arma="Espada Sagrada"
+      escreva("Seu nome de batalha apartir de agora é ",nomeguerreiro)
+      sttshonra=5
+      sttsforca=3
+      sttsinteligencia=1
+      sttsmagica=0
+      pare
+    }
+   }enquanto(classe<0 ou classe>4)
+    escreva("\n\nStatus de [",classenom,"]\nHonra - ",sttshonra,"\nForça - ",sttsforca,"\nInteligencia - ",sttsinteligencia,"\nMagica - ",sttsmagica)
+    escreva("\nDeseja inicar o jogo? [S/N]\n")
+    cadeia choice
+    inteiro choicenum
+    leia(choice)
+    se(choice=="N" ou choice=="n"){
+      retorne
+    }
+    escreva("Loading\n[   ]")
+    u.aguarde(500)
+    escreva("\n[.  ]")
+    u.aguarde(500)
+    escreva("\n[.. ]")
+    u.aguarde(500)
+    escreva("\n[...]")
+    u.aguarde(1500)
+    limpa()
+    escreva(titulo)
+    cadeia passardialogo, choice
+    cadeia pergunta
+    inteiro chance
+    inteiro choicenumimportante, choicenum
+    chance = u.sorteia(1,2)
+    u.aguarde(500)
+   escreva("\nVocê acorda em meio a um campo aberto, dernorteado e sem lembranças de nada.\nNa sua frente há um esqueleto deitado, em sua mão um pergaminho.")
+   leia(passardialogo)
+   escreva("- Roube a coroa de Dormmamu e a devolva ao pedestal da lua e enfim o cilclo acabara.")
+   leia(passardialogo)
+   escreva("Voce não entende muito de primeiro momento.\nVocê se vira para traz ve uma grande estatua de um cavaleiro com um brasão de sol em sua armadura,")
+   se(arma!="Nenhuma"){
+    escreva("\nNa base da estatua você encontra um/a ",arma,".\n- Voce decide pega-lo/a e sair de lá")
+   }
+   senao{
+    escreva("\nParecia haver algo na base da estatua, mas não havia nada lá\n- Você decide sair dali")
+   }
+   leia(passardialogo)
+   //escolha 3 / pergunta
+   faca{
+   escreva("Quando você estava saindo bosque percebe um figura emcapuzada indo na direção ao pedestal.\ne então decide\n1 - Questionar a figura misteriosa\n2 - Ignora-lá\n")
+   leia(choicenumimportante)
+   se(choicenumimportante==1){
+    escreva("Você pergunta, ")
+    leia(pergunta)
+    se(chance==1){
+      escreva("- Você não vai querer saber a resposta... -\n disse a figura misteriosa enquanto continuava a caminhar até a estatua")
+      leia(passardialogo)
+      escreva("Você não entende a resposta mas vai embora.")
+      leia(passardialogo)
+    }
+    senao{
+      escreva("- A Figura misteriosa ignorou sua pergunta e continou seu percurso até a estatua")
+      leia(passardialogo)
+      escreva("Você fica com raiva por ter sido ignorado mas vai embora.")
+      leia(passardialogo)
+    }
+   }
+  senao se(choicenumimportante==2){
+    escreva("Você decide ignorar a figura e continuar seu caminho até sair do bosque")
+    leia(passardialogo)
+
+  }
+}enquanto(choicenumimportante!=1 e choicenumimportante!=2)
+limpa()
+escreva(titulo)
+u.aguarde(500)
+//escolha 4
+escreva("\nDepois de sair do bosque você percebe um acampamento abandonado.")
+u.aguarde(500)
+escreva("\nIr até lá e vasculhar o local? [S/N]\n")
+choice="P"
+leia(choice)
+se(choice=="s" ou choice=="S"){
+  se(sttshonra>0){
+    sttshonra=sttshonra-1
+  }
+  escreva("-1 De Honra \nHonra - ",sttshonra,"/10\n")
+  escreva("Voce foi até o acampamento abandonado e começou a vasculhar")
+  u.aguarde(500)
+  escreva(".")
+  u.aguarde(500)
+  escreva(".")
+  u.aguarde(500)
+  escreva(".")
+  chance = u.sorteia(1,4)
+  se(chance==1){
+    dinheiro = 10
+    escreva("\n- Você encontrou um saco com 10 moedas de ouro!!\n- Dinheiro - ",dinheiro,"/100")
+    }
+  senao se(chance==2){
+    se(arma!="Nenhuma"){
+    escreva("\n- Você encontrou uma Espada de Aço Damasco!!\n- Trocar ",arma," por Espada de Aço Damasco? [S/N]\n")
+    }
+    senao{
+      escreva("\n- Você encontrou uma Espada de Aço Damasco!!\n- Pegar a Espada de Aço Damasco? [S/N]\n")
+    }
+    leia(choice)
+    se(choice=="S" ou choice=="s"){
+      escreva("- Você pegou a Espada")
+      arma ="Espada de damasco"
+    }
+    senao se(choice=="n" ou choice=="N"){
+      escreva("- Você não pegou a Espada")
+    }
+  }
+  //Modo batalha
+  senao se(chance==3 ou chance==4){
+   se(arma=="Nenhuma"){
+    weapondamage=1
+  }
+  senao se(arma=="Machado de dois gumes"){
+    weapondamage=4
+  }
+  senao se(arma=="Lança velha enfetiçada"){
+    weapondamage=2
+  }
+  senao se(arma=="Espada Sagrada"){
+    weapondamage=3
+  }
+  senao se(arma=="Espada de damasco"){
+    weapondamage=4
+  }
+  escreva("\n- Voce estava vasculhando alguns baús quando derrepende um bandido apareceu empunhando uma espada.\nVocê deve enfrentalo!!")
+  inteiro vidainimigo = 10
+  leia(passardialogo)
+  limpa()
+  escreva(titulo)
+  u.aguarde(500)
+  inteiro rounds = 1
+  inteiro magiadfogo, chanceesquiva
+  faca{
+    escreva("\nROUND ",rounds,"\nVIDA DO INIMIGO = ",vidainimigo,"\nSUA VIDA = ",vida)
+    escreva("\nO que você quer fazer?")
+    escreva("\n1 - Atacar inimigo com a sua arma\n2 - Usar item de cura \n3 - Usar magia para atacar\n")
+    choicenum=0
+    leia(choicenum)
+    escolha(choicenum){
+      caso 1:
+      chance = u.sorteia(1,6)
+      se(chance==1 ou chance==3 ou chance==2){
+        escreva("- Você acertou um golpe no bandido!!\n- Você tirou ",weapondamage," de vida do bandido.")
+        vidainimigo = vidainimigo-weapondamage
+      }
+      senao se(chance==4 ou choice==5){
+        escreva("- Voce tentou acertar ele mas ele desviou\n- Voce tirou 0 de vida do bandido.")
+      }
+      senao se(chance==6){
+        escreva("- Você acertou um golpe critico no bandido!!\n- Você tirou ",weapondamage*2," de vida do bandido.")
+        vidainimigo = vidainimigo-(weapondamage*2)
+      }
+      pare
+      caso 2:
+      escreva("- Você não tem nenhum item de cura\n- Enquanto você estava procurando algum item pra se curar o bandido te ataca!!\nPerdeu 3 pontos de vida\nVida = ",vida-3,"/10")
+      vida=vida-3
+      pare
+      caso 3:
+        se(sttsmagica>=5){
+          escreva("- Você tenta utilizar alguma magia e felizmente funciona.\n- Voce tirou 3 de vida do bandido\n- Voce aprendeu uma magia de fogo.")
+          vidainimigo=vidainimigo-3
+          magiadfogo=1
+        }
+        senao{
+          escreva("- Você tenta utilizar alguma magia e infelizmente ela não funciona. \n- Enquanto você estava tentando utilizar a magia o bandido te ataca!!\nPerdeu 3 pontos de vida\nVida = ",vida-3,"/10")
+          vida=vida-3
+        }
+      pare
+      //sistema de esquiva
+      chanceesquiva= u.sorteia(1.4)
+      escreva("Depois da sua ação o bandido decide atacar você pensa rapido e decide esquivar.")
+      se(sttsinteligencia>=5){
+        escreva("Você analiza o golpe do adversario e vê duas opçoes, pra qual lado voce esquiva? \n1 - Direita \n2 - Esquerda")
+        leia(choicenum)
+        se(chanceesquiva==1 ou chanceesquiva==2 ou chanceesquiva==3){
+          escreva("- Voce conseguiu esquivar!! - Não levou nenhum dano")
+        }
+        senao{
+          vida=vida-2
+           escreva("- Voce não conseguiu esquivar!! - Perdeu 2 de vida\n- Vida - ",vida,"/10")
+        }
+      }
+      senao se(sttsinteligencia<5){
+        escreva("Você não conseguer analizar direito o golpe do seu adversario.Pra qual lado voce esquiva? \n1 - Direita \n2 - Esquerda\n3 - Para trás\n4 - Para frente")
+        leia(choicenum)
+        se(chanceesquiva==1 ou chanceesquiva==2){
+          escreva("- Voce conseguiu esquivar!! - Não levou nenhum dano")
+        }
+        senao{
+          vida=vida-2
+           escreva("- Voce não conseguiu esquivar!! - Perdeu 2 de vida\n- Vida - ",vida,"/10")
+        }
+      }
+    }
+
+
+
+    rounds=rounds+1
+    limpa()
+    escreva(titulo)
+  }enquanto(vidainimigo>0)
+
+
+
+
+
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+  }
+
+
+
+
+
+
+  }
+}
