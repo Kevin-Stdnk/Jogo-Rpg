@@ -1,11 +1,12 @@
 programa {
   inclua biblioteca Util --> u
   funcao inicio() {
-    cadeia nome, nomeguerreiro, classenom, titulo, arma
+    cadeia nome, nomeguerreiro, classenom, titulo, arma, deathmessage
     inteiro classe, dinheiro
-    inteiro sttsvida, sttshonra, sttsforca, sttsinteligencia, sttsmagica,weapondamage,vida
+    inteiro sttsvida, sttshonra, sttsforca, sttsinteligencia, sttsmagica,weapondamage,vida,pocaodevida=0,escudo=0
     vida = 10
     titulo=" ▄▄▄▄    ██▓     ▒█████  ▓█████▄ ▓█████▄▓██   ██▓\n▓█████▄ ▓██▒    ▒██▒  ██▒▒██▀ ██▌▒██▀ ██▌▒██  ██▒\n▒██▒ ▄██▒██░    ▒██░  ██▒░██   █▌░██   █▌ ▒██ ██░\n▒██░█▀  ▒██░    ▒██   ██░░▓█▄   ▌░▓█▄   ▌ ░ ▐██▓░\n░▓█  ▀█▓░██████▒░ ████▓▒░░▒████▓ ░▒████▓  ░ ██▒▓░\n░▒▓███▀▒░ ▒░▓  ░░ ▒░▒░▒░  ▒▒▓  ▒  ▒▒▓  ▒   ██▒▒▒ \n▒░▒   ░ ░ ░ ▒  ░  ░ ▒ ▒░  ░ ▒  ▒  ░ ▒  ▒ ▓██ ░▒░ \n ░    ░   ░ ░   ░ ░ ░ ▒   ░ ░  ░  ░ ░  ░ ▒ ▒ ░░  \n ░          ░  ░    ░ ░     ░       ░    ░ ░     \n      ░                   ░       ░      ░ ░     "
+    deathmessage="                         __________\n                      .~#########%%;~.\n                     /############%%;`\\\n                    /######/~\\/~\\%%;,;,\\\n                   |#######\\    /;;;;.,.|\n                   |#########\\/%;;;;;.,.|\n          XX       |##/~~\\####%;;;/~~\\;,|       XX\n        XX..X      |#|  o  \\##%;/  o  |.|      X..XX\n      XX.....X     |##\\____/##%;\\____/.,|     X.....XX\n XXXXX.....XX      \\#########/\\;;;;;;,, /      XX.....XXXXX\nX |......XX%,.@      \\######/%;\\;;;;, /      @#%,XX......| X\nX |.....X  @#%,.@     |######%%;;;;,.|     @#%,.@  X.....| X\nX  \\...X     @#%,.@   |# # # % ; ; ;,|   @#%,.@     X.../  X\n X# \\.X        @#%,.@                  @#%,.@        X./  #\n  ##  X          @#%,.@              @#%,.@          X   #\n, \"# #X            @#%,.@          @#%,.@            X ##\n   `###X             @#%,.@      @#%,.@             ####'\n  . ' ###              @#%.,@  @#%,.@              ###`\"\n    . \";\"                @#%.@#%,.@                ;\"` ' .\n      '                    @#%,.@                   ,.\n      ` ,                @#%,.@  @@                `\n                          @@@  @@@                  ."
 
 
     sttsvida=5
@@ -126,11 +127,13 @@ limpa()
 escreva(titulo)
 u.aguarde(500)
 //escolha 4
+faca{
 escreva("\nDepois de sair do bosque você percebe um acampamento abandonado.")
 u.aguarde(500)
 escreva("\nIr até lá e vasculhar o local? [S/N]\n")
 choice="P"
 leia(choice)
+}enquanto(choice!="s" e choice!="S" e choice!="n" e choice!="N")
 se(choice=="s" ou choice=="S"){
   se(sttshonra>0){
     sttshonra=sttshonra-1
@@ -143,7 +146,7 @@ se(choice=="s" ou choice=="S"){
   escreva(".")
   u.aguarde(500)
   escreva(".")
-  chance = u.sorteia(1,4)
+  chance = u.sorteia(1,3)
   se(chance==1){
     dinheiro = 10
     escreva("\n- Você encontrou um saco com 10 moedas de ouro!!\n- Dinheiro - ",dinheiro,"/100")
@@ -165,7 +168,6 @@ se(choice=="s" ou choice=="S"){
     }
   }
   //Modo batalha
-  senao se(chance==3 ou chance==4){
    se(arma=="Nenhuma"){
     weapondamage=1
   }
@@ -181,7 +183,16 @@ se(choice=="s" ou choice=="S"){
   senao se(arma=="Espada de damasco"){
     weapondamage=4
   }
+  se(chance==3 ou chance==4){
   escreva("\n- Voce estava vasculhando alguns baús quando derrepende um bandido apareceu empunhando uma espada.\nVocê deve enfrentalo!!")
+  }
+  se(chance==1){
+    escreva("\n- Voce estava saindo do acapamento com suas moedas quando derrepende um bandido apareceu empunhando uma espada.\nVocê deve enfrentalo!!")
+    }
+  senao se(chance==2){
+    escreva("\n- Voce estava saindo do acapamento com sua espada quando derrepende um bandido apareceu empunhando uma espada.\nVocê deve enfrentalo!!")
+    }
+
   inteiro vidainimigo = 10
   leia(passardialogo)
   limpa()
@@ -189,11 +200,17 @@ se(choice=="s" ou choice=="S"){
   u.aguarde(500)
   inteiro rounds = 1
   inteiro magiadfogo, chanceesquiva
+  magiadfogo=0
   faca{
     escreva("\nROUND ",rounds,"\nVIDA DO INIMIGO = ",vidainimigo,"\nSUA VIDA = ",vida)
     escreva("\nO que você quer fazer?")
     escreva("\n1 - Atacar inimigo com a sua arma\n2 - Usar item de cura \n3 - Usar magia para atacar\n")
     choicenum=0
+    se(vida<=0){
+      limpa()
+      escreva(deathmessage,"\nVOCE MORREU...")
+      retorne
+    }
     leia(choicenum)
     escolha(choicenum){
       caso 1:
@@ -216,20 +233,31 @@ se(choice=="s" ou choice=="S"){
       pare
       caso 3:
         se(sttsmagica>=5){
+          se(magiadfogo==0){
           escreva("- Você tenta utilizar alguma magia e felizmente funciona.\n- Voce tirou 3 de vida do bandido\n- Voce aprendeu uma magia de fogo.")
           vidainimigo=vidainimigo-3
           magiadfogo=1
+          }
+          senao se(magiadfogo==1){
+             escreva("- Você utiliza a magia de fogo! \n- Voce tirou 3 de vida do bandido.")
+          vidainimigo=vidainimigo-3
+          }
         }
         senao{
           escreva("- Você tenta utilizar alguma magia e infelizmente ela não funciona. \n- Enquanto você estava tentando utilizar a magia o bandido te ataca!!\nPerdeu 3 pontos de vida\nVida = ",vida-3,"/10")
           vida=vida-3
         }
       pare
+     }
+     leia(passardialogo)
       //sistema de esquiva
-      chanceesquiva= u.sorteia(1.4)
-      escreva("Depois da sua ação o bandido decide atacar você pensa rapido e decide esquivar.")
+      faca{
+      limpa()
+      escreva(titulo)
+      chanceesquiva= u.sorteia(1,4)
+      escreva("\nDepois da sua ação o bandido decide atacar você pensa rapido e decide esquivar.")
       se(sttsinteligencia>=5){
-        escreva("Você analiza o golpe do adversario e vê duas opçoes, pra qual lado voce esquiva? \n1 - Direita \n2 - Esquerda")
+        escreva("Você analiza o golpe do adversario e vê duas opçoes, pra qual lado voce esquiva? \n1 - Direita \n2 - Esquerda\n")
         leia(choicenum)
         se(chanceesquiva==1 ou chanceesquiva==2 ou chanceesquiva==3){
           escreva("- Voce conseguiu esquivar!! - Não levou nenhum dano")
@@ -239,8 +267,8 @@ se(choice=="s" ou choice=="S"){
            escreva("- Voce não conseguiu esquivar!! - Perdeu 2 de vida\n- Vida - ",vida,"/10")
         }
       }
-      senao se(sttsinteligencia<5){
-        escreva("Você não conseguer analizar direito o golpe do seu adversario.Pra qual lado voce esquiva? \n1 - Direita \n2 - Esquerda\n3 - Para trás\n4 - Para frente")
+      senao se(sttsinteligencia!=5){
+        escreva("Você não conseguer analizar direito o golpe do seu adversario.\nPra qual lado voce esquiva? \n1 - Direita \n2 - Esquerda\n3 - Para trás\n4 - Para frente\n")
         leia(choicenum)
         se(chanceesquiva==1 ou chanceesquiva==2){
           escreva("- Voce conseguiu esquivar!! - Não levou nenhum dano")
@@ -249,18 +277,115 @@ se(choice=="s" ou choice=="S"){
           vida=vida-2
            escreva("- Voce não conseguiu esquivar!! - Perdeu 2 de vida\n- Vida - ",vida,"/10")
         }
-      }
     }
+      }enquanto(choicenum!=1 e choicenum!=2 e choicenum!=3 e choicenum!=4)
 
-
-
+    leia(passardialogo)
     rounds=rounds+1
     limpa()
     escreva(titulo)
   }enquanto(vidainimigo>0)
+  escreva("\n- Você derrotou o inimigo!!")
+  escreva("\nDeseja vasculhar o corpo em busca de loot?\n[S/N]\n")
+  leia(choice)
+  se(choice=="S" ou choice=="s"){
+    se(sttshonra<2){
+    sttshonra=0
+    }
+    senao{
+      sttshonra=sttshonra-2
+    }
+    escreva("-2 de Honra\nHonra = ",sttshonra,"/10")
+    escreva("\nVocê decide vasculhar o corpo e então")
+    u.aguarde(500)
+    escreva(".")
+    u.aguarde(500)
+    escreva(".")
+    u.aguarde(500)
+    escreva(".")
+    u.aguarde(500)
+      escreva("\nVoce encontrou uma poção de cura e 5 moedas de ouro!!")
+      dinheiro = dinheiro+5
+      se(vida==10){
+        escreva("\n- Voce esta com a vida cheia e então decide guardar a poção para depois.")
+        pocaodevida=1
+      }
+      senao{
+        escreva("\n- Voce esta com ",vida,"/10 de vida, deseja tomar a poção?\n[S/N]\n")
+        leia(choice)
+        se(choice=="S" ou choice=="s"){
+          se(vida>6){
+            vida=10
+            escreva("\nVoce tomou a poção e ficou com ",vida,"/10 de vida.\n-Depois disso voce decide sair do local.")
+          }
+          senao{
+          vida=vida+5
+          escreva("\nVoce tomou a poção e ficou com ",vida,"/10 de vida.\n-Depois disso voce decide sair do local.")
+        }
+        }
+        se(choice=="n" ou choice=="N"){
+        escreva("\nVoce não tomou a poção porem a guardou. +1 poção de vida\n-Depois disso voce decide sair do local.")
+        pocaodevida=1
+        }
+        
+      }
 
-
-
+    }
+    senao se(choice=="n" ou choice=="N"){
+      se(sttshonra>=10){
+    sttshonra=10
+    }
+    senao{
+      sttshonra=sttshonra+2
+    }
+    escreva("+2 de Honra\nHonra = ",sttshonra,"/10")
+    escreva("\nVocê decide não vasculhar o corpo e então ecide sair do local.")
+    }
+  }
+  senao se(choice=="n" ou choice=="N"){
+    escreva("Você decide ignorar o local e vai embora.")
+  }
+  leia(passardialogo)
+  limpa()
+  escreva(titulo)
+  escreva("\nDepois de andar um pouco voce consegue achar uma cidade pequena\ndepois de entrar na cidade voce decide ir até uma loja local para tentar comprar alguma coisa.\nNo caminha você percebe algumas pessoas em volta de uma estatua que segura o sol e a lua em cada mão.")
+    u.aguarde(500)
+    escreva("\nVendedor - Quer alguma coisa senhor/a?\n1 - Escudo velho (10 moedas)\n2 - Anel Misterioso (5 moedas/Magia +5)\n3- Perguntar sobre a aquela estatua(Não comprar nada)\n")
+    choicenum=0
+    leia(choicenum)
+    escolha(choicenum){
+      caso 1: se(dinheiro>=10){
+        escreva("\n- Voce comprou o escudo velho.\nDepois de comprar, voce decide averiguar aquela estatua.")
+        escudo=1
+        dinheiro = dinheiro - 10
+      }
+      senao{
+        escreva("\nVendedor - Voce não tem dinheiro!! Saia daqui agora.\nVoce sai da loja, e decide ir até a aquela estatua")
+      }
+      pare
+      caso 2:
+      se(dinheiro>=5){
+        escreva("\n- Voce comprou o Anel misterioso.\nDepois de comprar a espada voce decide averiguar aquela estatua.")
+        dinheiro = dinheiro - 5
+        sttsmagica=sttsmagica+5
+      }
+      senao{
+        escreva("\nVendedor - Voce não tem dinheiro!!\nVoce sai da loja, e decide ir até a aquela estatua")
+      }
+      pare
+      caso 3: 
+      escreva("\nVenderdor - Aquela estatua? Algumas pessoas das redondezas acretidam que esse local é almadiçoado, alguma baboseira sobre matar e viver. Parece estranho, nas aquele pessoal do culto é pacifico.")
+           pare
+    }
+    leia(passardialogo)
+    limpa()
+    escreva(titulo,"\n")
+    se(choicenum==3){
+      escreva("Quando voce chega na estatua e ve na sua base escrito - aqui onde o sol mata a lua todos as manhãs e a lua mata o sol todo anoitecer.\n Você ve o vendedor estava certo, e decide partir até o territorio de Dormammu.")
+    }
+    senao{
+      escreva("Quando voce chega na estatua e ve na sua base escrito - aqui onde o sol mata a lua todos as manhãs e a lua mata o sol todo anoitecer.\n Você não da muita bola e decide partir até o territorio de Dormammu.")
+    }
 
 
 
@@ -269,31 +394,11 @@ se(choice=="s" ou choice=="S"){
 
 
  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-  }
-
-
-
-
-
-
-  }
 }
+
+
+
+
+
+
+
