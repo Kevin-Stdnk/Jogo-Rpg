@@ -15,7 +15,7 @@ programa {
     leia(nome)
     faca{
       escreva("Qual seu apelido (classe)?")
-    escreva("\n1 - ",nome,", o Exilado / sem classe\n2 - ",nome,", o Carrasco / Barbaro\n3 - ",nome,", o Arcebispo / Feiticeiro\n4 - ",nome,", o Arauto / Cavaleiro\n")
+    escreva("\n1 - ",nome,", o Exilado / sem classe\n2 - ",nome,", o Carrasco / Barbaro\n3 - ",nome,", o Arcebispo / Xamã\n4 - ",nome,", o Arauto / Cavaleiro\n")
     leia(classe)
     //escolha 2 classe
     escolha(classe){
@@ -23,7 +23,7 @@ programa {
       classenom="Sem Classe"
       nomeguerreiro=nome+", o Exilado"
       arma="Nenhuma"
-      escreva("Seu nome de batalha apartir de agora é ",nomeguerreiro)
+      escreva("Seu nome de batalha a partir de agora é ",nomeguerreiro)
       sttshonra=1
       sttsforca=1
       sttsinteligencia=5
@@ -33,7 +33,7 @@ programa {
       classenom="Barbaro"
       nomeguerreiro=nome+", o Carrasco"
       arma="Machado de dois gumes"
-      escreva("Seu nome de batalha apartir de agora é ",nomeguerreiro)
+      escreva("Seu nome de batalha a partir de agora é ",nomeguerreiro)
       sttshonra=0
       sttsforca=5
       sttsinteligencia=1
@@ -43,7 +43,7 @@ programa {
       classenom="Xamã"
       nomeguerreiro=nome+", o Arcebispo"
       arma="Lança velha enfetiçada"
-      escreva("\nSeu nome de batalha apartir de agora é ",nomeguerreiro)
+      escreva("\nSeu nome de batalha a partir de agora é ",nomeguerreiro)
       sttshonra=1
       sttsforca=0
       sttsinteligencia=3
@@ -53,7 +53,7 @@ programa {
       classenom="Cavaleiro"
       nomeguerreiro=nome+", o Arauto"
       arma="Espada Sagrada"
-      escreva("Seu nome de batalha apartir de agora é ",nomeguerreiro)
+      escreva("Seu nome de batalha a partir de agora é ",nomeguerreiro)
       sttshonra=5
       sttsforca=3
       sttsinteligencia=1
@@ -85,13 +85,13 @@ programa {
     inteiro choicenumimportante, choicenum
     chance = u.sorteia(1,2)
     u.aguarde(500)
-   escreva("\nVocê acorda em meio a um campo aberto, dernorteado e sem lembranças de nada.\nNa sua frente há um esqueleto deitado, em sua mão um pergaminho. Voce pega o pergaminho e no mesmo instante o esqueleto se desfaz na sua frente.")
+   escreva("\nVocê acorda em meio a um campo aberto, desnorteado e sem lembranças de nada.\nNa sua frente há um esqueleto deitado, em sua mão um pergaminho. Você pega o pergaminho e no mesmo instante o esqueleto se desfaz na sua frente.")
    leia(passardialogo)
-   escreva("- Roube a coroa de Dormmamu e a devolva a estatua do sol e enfim o cilclo acabara.")
+   escreva("- Roube a coroa de Dormammu e a devolva a estatua do sol e enfim o ciclo acabara.")
    leia(passardialogo)
-   escreva("Voce não entende muito de primeiro momento.\nVocê se vira para traz ve uma grande estatua de um cavaleiro com um brasão de sol em sua armadura,")
+   escreva("Você não entende muito num primeiro momento.\nVocê se vira para traz ve uma grande estatua de um cavaleiro com um brasão de sol em sua armadura,")
    se(arma!="Nenhuma"){
-    escreva("\nNa base da estatua você encontra um/a ",arma,".\n- Voce decide pega-lo/a e sair de lá")
+    escreva("\nNa base da estatua você encontra um/a ",arma,".\n- Você decide pega-lo/a e sair de lá")
    }
    senao{
     escreva("\nParecia haver algo na base da estatua, mas não havia nada lá\n- Você decide sair dali")
@@ -99,7 +99,7 @@ programa {
    leia(passardialogo)
    //escolha 3 / pergunta
    faca{
-   escreva("Quando você estava saindo bosque percebe um figura emcapuzada indo na direção a estatua.\ne então decide\n1 - Questionar a figura misteriosa\n2 - Ignora-lá\n")
+   escreva("Quando você estava saindo bosque percebe um figura encapuzada indo na direção a estatua.\ne então decide\n1 - Questionar a figura misteriosa\n2 - Ignora-lá\n")
    leia(choicenumimportante)
    se(choicenumimportante==1){
     escreva("Você pergunta, ")
@@ -111,7 +111,7 @@ programa {
       leia(passardialogo)
     }
     senao{
-      escreva("- A Figura misteriosa ignorou sua pergunta e continou seu percurso até a estatua")
+      escreva("- A Figura misteriosa ignorou sua pergunta e continuou seu percurso até a estatua")
       leia(passardialogo)
       escreva("Você fica com raiva por ter sido ignorado mas vai embora.")
       leia(passardialogo)
@@ -139,7 +139,7 @@ se(choice=="s" ou choice=="S"){
     sttshonra=sttshonra-1
   }
   escreva("-1 De Honra \nHonra - ",sttshonra,"/10\n")
-  escreva("Voce foi até o acampamento abandonado e começou a vasculhar")
+  escreva("Você foi até o acampamento abandonado e começou a vasculhar")
   u.aguarde(500)
   escreva(".")
   u.aguarde(500)
@@ -185,13 +185,13 @@ se(choice=="s" ou choice=="S"){
     weapondamage=4
   }
   se(chance==3 ou chance==4 e arma!="Espada de damasco"){
-  escreva("\n- Voce estava vasculhando alguns baús quando derrepende um bandido apareceu empunhando uma espada.\nVocê deve enfrentalo!!")
+  escreva("\n- Você estava vasculhando alguns baús quando de repende um bandido apareceu empunhando uma espada.\nVocê deve enfrentalo!!")
   }
   senao se(chance==1){
-    escreva("\n- Voce estava saindo do acapamento com suas moedas quando derrepende um bandido apareceu empunhando uma espada.\nVocê deve enfrentalo!!")
+    escreva("\n- Você estava saindo do acapamento com suas moedas quando de repende um bandido apareceu empunhando uma espada.\nVocê deve enfrentalo!!")
     }
   senao se(arma=="Espada de damasco"){
-    escreva("\n- Voce estava saindo do acapamento com sua espada quando derrepende um bandido apareceu empunhando uma espada.\nVocê deve enfrentalo!!")
+    escreva("\n- Você estava saindo do acapamento com sua espada quando de repende um bandido apareceu empunhando uma espada.\nVocê deve enfrentalo!!")
     }
 
   inteiro vidainimigo = 10
@@ -209,7 +209,7 @@ se(choice=="s" ou choice=="S"){
     choicenum=0
     se(vida<=0){
       limpa()
-      escreva(deathmessage,"\nVOCE MORREU...")
+      escreva(deathmessage,"\nVocê MORREU...")
       retorne
     }
     leia(choicenum)
@@ -221,7 +221,7 @@ se(choice=="s" ou choice=="S"){
         vidainimigo = vidainimigo-weapondamage
       }
       senao se(chance==4 ou choice==5){
-        escreva("- Voce tentou acertar ele mas ele desviou\n- Voce tirou 0 de vida do bandido.")
+        escreva("- Você tentou acertar ele mas ele desviou\n- Você tirou 0 de vida do bandido.")
       }
       senao se(chance==6){
         escreva("- Você acertou um golpe critico no bandido!!\n- Você tirou ",weapondamage*2," de vida do bandido.")
@@ -235,12 +235,12 @@ se(choice=="s" ou choice=="S"){
       caso 3:
         se(sttsmagica>=5){
           se(magiadfogo==0){
-          escreva("- Você tenta utilizar alguma magia e felizmente funciona.\n- Voce tirou 3 de vida do bandido\n- Voce aprendeu uma magia de fogo.")
+          escreva("- Você tenta utilizar alguma magia e felizmente funciona.\n- Você tirou 3 de vida do bandido\n- Você aprendeu uma magia de fogo.")
           vidainimigo=vidainimigo-3
           magiadfogo=1
           }
           senao se(magiadfogo==1){
-             escreva("- Você utiliza a magia de fogo! \n- Voce tirou 3 de vida do bandido.")
+             escreva("- Você utiliza a magia de fogo! \n- Você tirou 3 de vida do bandido.")
           vidainimigo=vidainimigo-3
           }
         }
@@ -258,25 +258,25 @@ se(choice=="s" ou choice=="S"){
       chanceesquiva= u.sorteia(1,4)
       escreva("\nDepois da sua ação o bandido decide atacar você pensa rapido e decide esquivar.")
       se(sttsinteligencia>=5){
-        escreva("Você analiza o golpe do adversario e vê duas opçoes, pra qual lado voce esquiva? \n1 - Direita \n2 - Esquerda\n")
+        escreva("Você analisa o golpe do adversario e vê duas opçoes, pra qual lado Você esquiva? \n1 - Direita \n2 - Esquerda\n")
         leia(choicenum)
         se(chanceesquiva==1 ou chanceesquiva==2 ou chanceesquiva==3){
-          escreva("- Voce conseguiu esquivar!! - Não levou nenhum dano")
+          escreva("- Você conseguiu esquivar!! - Não levou nenhum dano")
         }
         senao{
           vida=vida-2
-           escreva("- Voce não conseguiu esquivar!! - Perdeu 2 de vida\n- Vida - ",vida,"/10")
+           escreva("- Você não conseguiu esquivar!! - Perdeu 2 de vida\n- Vida - ",vida,"/10")
         }
       }
       senao se(sttsinteligencia!=5){
-        escreva("Você não conseguer analizar direito o golpe do seu adversario.\nPra qual lado voce esquiva? \n1 - Direita \n2 - Esquerda\n3 - Para trás\n4 - Para frente\n")
+        escreva("Você não conseguer analisar direito o golpe do seu adversario.\nPra qual lado Você esquiva? \n1 - Direita \n2 - Esquerda\n3 - Para trás\n4 - Para frente\n")
         leia(choicenum)
         se(chanceesquiva==1 ou chanceesquiva==2){
-          escreva("- Voce conseguiu esquivar!! - Não levou nenhum dano")
+          escreva("- Você conseguiu esquivar!! - Não levou nenhum dano")
         }
         senao{
           vida=vida-2
-           escreva("- Voce não conseguiu esquivar!! - Perdeu 2 de vida\n- Vida - ",vida,"/10")
+           escreva("- Você não conseguiu esquivar!! - Perdeu 2 de vida\n- Vida - ",vida,"/10")
         }
     }
       }enquanto(choicenum!=1 e choicenum!=2 e choicenum!=3 e choicenum!=4)
@@ -305,27 +305,27 @@ se(choice=="s" ou choice=="S"){
     u.aguarde(500)
     escreva(".")
     u.aguarde(500)
-      escreva("\nVoce encontrou uma poção de cura e 5 moedas de ouro!!")
+      escreva("\nVocê encontrou uma poção de cura e 5 moedas de ouro!!")
       dinheiro = dinheiro + 5
       se(vida==10){
-        escreva("\n- Voce esta com a vida cheia e então decide guardar a poção para depois.")
+        escreva("\n- Você esta com a vida cheia e então decide guardar a poção para depois.")
         pocaodevida=1
       }
       senao{
-        escreva("\n- Voce esta com ",vida,"/10 de vida, deseja tomar a poção?\n[S/N]\n")
+        escreva("\n- Você esta com ",vida,"/10 de vida, deseja tomar a poção?\n[S/N]\n")
         leia(choice)
         se(choice=="S" ou choice=="s"){
           se(vida>6){
             vida=10
-            escreva("\nVoce tomou a poção e ficou com ",vida,"/10 de vida.\n-Depois disso voce decide sair do local.")
+            escreva("\nVocê tomou a poção e ficou com ",vida,"/10 de vida.\n-Depois disso Você decide sair do local.")
           }
           senao{
           vida=vida+5
-          escreva("\nVoce tomou a poção e ficou com ",vida,"/10 de vida.\n-Depois disso voce decide sair do local.")
+          escreva("\nVocê tomou a poção e ficou com ",vida,"/10 de vida.\n-Depois disso Você decide sair do local.")
         }
         }
         se(choice=="n" ou choice=="N"){
-        escreva("\nVoce não tomou a poção porem a guardou. +1 poção de vida\n-Depois disso voce decide sair do local.")
+        escreva("\nVocê não tomou a poção porem a guardou. +1 poção de vida\n-Depois disso Você decide sair do local.")
         pocaodevida=1
         }
         
@@ -340,7 +340,7 @@ se(choice=="s" ou choice=="S"){
       sttshonra=sttshonra+2
     }
     escreva("+2 de Honra\nHonra = ",sttshonra,"/10")
-    escreva("\nVocê decide não vasculhar o corpo e então ecide sair do local.")
+    escreva("\nVocê decide não vasculhar o corpo e então decide sair do local.")
     }
   }
   senao se(choice=="n" ou choice=="N"){
@@ -349,43 +349,43 @@ se(choice=="s" ou choice=="S"){
   leia(passardialogo)
   limpa()
   escreva(titulo)
-  escreva("\nDepois de andar um pouco voce consegue achar uma cidade pequena\ndepois de entrar na cidade voce decide ir até uma loja local para tentar comprar alguma coisa.\nNo caminha você percebe algumas pessoas em volta de uma estatua que segura o sol e a lua em cada mão.")
+  escreva("\nDepois de andar um pouco Você consegue achar uma cidade pequena\ndepois de entrar na cidade Você decide ir até uma loja local para tentar comprar alguma coisa.\nNo caminha você percebe algumas pessoas em volta de uma estatua que segura o sol e a lua em cada mão.")
     u.aguarde(500)
     escreva("\nVendedor - Quer alguma coisa senhor/a?\n1 - Escudo velho (10 moedas)\n2 - Anel Misterioso (5 moedas/Magia +5)\n3- Perguntar sobre a aquela estatua( Não comprar nada)\nDinheiro = ",dinheiro,"\n")
     choicenum=0
     leia(choicenum)
     escolha(choicenum){
       caso 1: se(dinheiro>=10){
-        escreva("\n- Voce comprou o escudo velho.\nDepois de comprar, voce decide averiguar aquela estatua.")
+        escreva("\n- Você comprou o escudo velho.\nDepois de comprar, Você decide averiguar aquela estatua.")
         escudo=1
         dinheiro = dinheiro - 10
       }
       senao{
-        escreva("\nVendedor - Voce não tem dinheiro!! Saia daqui agora.\nVoce sai da loja, e decide ir até a aquela estatua")
+        escreva("\nVendedor - Você não tem dinheiro!! Saia daqui agora.\nVocê sai da loja, e decide ir até a aquela estatua")
       }
       pare
       caso 2:
       se(dinheiro>=5){
-        escreva("\n- Voce comprou o Anel misterioso.\nDepois de comprar o anel voce decide averiguar aquela estatua.")
+        escreva("\n- Você comprou o Anel misterioso.\nDepois de comprar o anel Você decide averiguar aquela estatua.")
         dinheiro = dinheiro - 5
         sttsmagica=sttsmagica+5
       }
       senao{
-        escreva("\nVendedor - Voce não tem dinheiro!!\nVoce sai da loja, e decide ir até a aquela estatua")
+        escreva("\nVendedor - Você não tem dinheiro!!\nVocê sai da loja, e decide ir até a aquela estatua")
       }
       pare
       caso 3: 
-      escreva("\nVenderdor - Aquela estatua? Algumas pessoas das redondezas acretidam que esse local é almadiçoado, alguma baboseira sobre matar e viver. Parece estranho, nas aquele pessoal do culto é pacifico.\n- Depois de ouvir a historia do vendedor você decide averiguar por você mesmo")
+      escreva("\nVenderdor - Aquela estatua? Algumas pessoas das redondezas acretidam que esse local é amaldiçoado, alguma baboseira sobre matar e viver. Parece estranho, nas aquele pessoal do culto é pacifico.\n- Depois de ouvir a historia do vendedor você decide averiguar por você mesmo")
            pare
     }
     leia(passardialogo)
     limpa()
     escreva(titulo,"\n")
     se(choicenum==3){
-      escreva("Quando voce chega na estatua e ve na sua base escrito - aqui onde o sol mata a lua todos as manhãs e a lua mata o sol todo anoitecer.\n Você ve o vendedor estava certo, e decide partir até o territorio de Dormammu.")
+      escreva("Quando Você chega na estatua e ve na sua base escrito - aqui onde o sol mata a lua todos as manhãs e a lua mata o sol todo anoitecer.\n Você ve o vendedor estava certo, e decide partir até o territorio de Dormammu.")
     }
     senao{
-      escreva("Quando voce chega na estatua e ve na sua base escrito - aqui onde o sol mata a lua todos as manhãs e a lua mata o sol todo anoitecer.\n Você não da muita bola e decide partir até o territorio de Dormammu.")
+      escreva("Quando Você chega na estatua e ve na sua base escrito - aqui onde o sol mata a lua todos as manhãs e a lua mata o sol todo anoitecer.\n Você não da muita bola e decide partir até o territorio de Dormammu.")
     }
     leia(passardialogo)
     limpa()
@@ -398,7 +398,7 @@ se(choice=="s" ou choice=="S"){
     u.aguarde(500)
     escreva(".")
     u.aguarde(500)
-    escreva("\nVocê percebe algo de errado, a coroa de Dormammu, estava jogada em meio a floresta, como se estivesse esperando por voce")
+    escreva("\nVocê percebe algo de errado, a coroa de Dormammu, estava jogada em meio a floresta, como se estivesse esperando por Você")
     u.aguarde(500)
     escreva(".")
     u.aguarde(500)
@@ -414,14 +414,14 @@ se(choice=="s" ou choice=="S"){
   leia(passardialogo)
   se(choicenumimportante==1){
     escreva("De repente, olhando para você... ele pergunta ",pergunta)
-    escreva("\nE então voce...\n1 - Responde 'Você não vai querer saber a resposta...'\n2 - Ignorar ele\n")
+    escreva("\nE então Você...\n1 - Responde 'Você não vai querer saber a resposta...'\n2 - Ignorar ele\n")
   }
   leia(choice)
-  escreva("- Você é muito insolente porém, voce trouxe ela ate mim? - diz ele enquanto puxava magicamente sua coroa da minha mão.")
+  escreva("- Você é muito insolente porém, Você trouxe ela ate mim? - diz ele enquanto puxava magicamente sua coroa da minha mão.")
  //Modo batalha
   
   inteiro vidainimigo = 100
-  escreva("- Voce entra em posição de batalha. Voce deve derrota-lo.")
+  escreva("Você entra em posição de batalha.\nVocê deve derrotá-lo")
   leia(passardialogo)
   limpa()
   escreva(titulo)
@@ -431,11 +431,11 @@ se(choice=="s" ou choice=="S"){
   faca{
     se(vida<=0){
       limpa()
-      escreva(deathmessage,"\nVOCE MORREU...")
+      escreva(deathmessage,"\nVocê MORREU...")
       leia(passardialogo)
       escreva("\nPrograma finalizado. Tempo de execução: 140345 milisegundos")
       u.aguarde(2000)
-      escreva("\nVoce acha que vou deixar isso acabar agora? Volte.")
+      escreva("\nVocê acha que vou deixar isso acabar agora? Volte.")
       vida=10
     }
     escreva("\nROUND ",rounds,"\nVIDA DO INIMIGO = ",vidainimigo,"\nSUA VIDA = ",vida)
@@ -448,11 +448,11 @@ se(choice=="s" ou choice=="S"){
       caso 1:
       chance = u.sorteia(1,6)
       se(chance==1 ou chance==3 ou chance==2){
-        escreva("- Você acertou um golpe em Dormammu!!\n- Você tirou ",weapondamage," de vida de Dormammu..")
+        escreva("- Você acertou um golpe em Dormammu!!\n- Você tirou ",weapondamage," de vida do bandido.")
         vidainimigo = vidainimigo-weapondamage
       }
       senao se(chance==4 ou choice==5){
-        escreva("- Voce tentou acertar ele mas ele desviou\n- Voce tirou 0 de vida de Dormammu.")
+        escreva("- Você tentou acertar ele mas ele desviou\n- Você tirou 0 de vida de Dormammu.")
       }
       senao se(chance==6){
         escreva("- Você acertou um golpe critico no bandido!!\n- Você tirou ",weapondamage*2," de vida de Dormammu.")
@@ -460,34 +460,18 @@ se(choice=="s" ou choice=="S"){
       }
       pare
       caso 2:
-      se(pocaodevida==1){ 
-      escreva("- Você tinha uma poção de cura!!")
-        se(vida==10){
-          escreva("\nVocê já esta com a vida cheia")
-        }
-        senao se(vida>=6){
-          screva("\nVocê toma a poção de vida.\nVida completa")
-          vida=10
-        }
-        senao{
-           screva("\nVocê toma a poção de vida.\nVida - ",vida,"/10")
-          vida=vida+5
-        }
-      }
-      senao se(pocaodevida==0){
-        escreva("- Você não tem nenhum item de cura\n- Enquanto você estava procurando algum item pra se curar, Dormammu te ataca!!\nPerdeu 3 pontos de vida\nVida = ",vida-3,"/10")
+      escreva("- Você não tem nenhum item de cura\n- Enquanto você estava procurando algum item pra se curar, Dormammu te ataca!!\nPerdeu 3 pontos de vida\nVida = ",vida-3,"/10")
       vida=vida-3
-      }
       pare
       caso 3:
         se(sttsmagica>=5){
           se(magiadfogo==0){
-          escreva("- Você tenta utilizar alguma magia e felizmente funciona.\n- Voce tirou 3 de vida de Dormammu\n- Voce aprendeu uma magia de fogo.")
+          escreva("- Você tenta utilizar alguma magia e felizmente funciona.\n- Você tirou 3 de vida de Dormammu\n- Você aprendeu uma magia de fogo.")
           vidainimigo=vidainimigo-3
           magiadfogo=1
           }
           senao se(magiadfogo==1){
-             escreva("- Você utiliza a magia de fogo! \n- Voce tirou 3 de vida de Dormammu.")
+             escreva("- Você utiliza a magia de fogo! \n- Você tirou 3 de vida de Dormammu.")
           vidainimigo=vidainimigo-3
           }
         }
@@ -499,10 +483,10 @@ se(choice=="s" ou choice=="S"){
      }
      se(vida<=0){
       limpa()
-      escreva(deathmessage,"\nVOCE MORREU...")
+      escreva(deathmessage,"\nVocê MORREU...")
       escreva("Programa finalizado. Tempo de execução: 140345 milisegundos")
       u.aguarde(1000)
-      escreva("Voce acha que vou deixar isso acabar agora? Volte.")
+      escreva("Você acha que vou deixar isso acabar agora? Volte.")
       vida=10
      }
      leia(passardialogo)
@@ -511,27 +495,27 @@ se(choice=="s" ou choice=="S"){
       limpa()
       escreva(titulo)
       chanceesquiva= u.sorteia(1,4)
-      escreva("\nDepois da sua ação Dormmamu decide atacar, você pensa rapido e decide esquivar.")
+      escreva("\nDepois da sua ação Dormammu decide atacar, você pensa rapido e decide esquivar.")
       se(sttsinteligencia>=5){
-        escreva("Você analiza o golpe do adversario e vê duas opçoes, pra qual lado voce esquiva? \n1 - Direita \n2 - Esquerda\n")
+        escreva("Você analiza o golpe do adversario e vê duas opçoes, pra qual lado Você esquiva? \n1 - Direita \n2 - Esquerda\n")
         leia(choicenum)
         se(chanceesquiva==1 ou chanceesquiva==2 ou chanceesquiva==3){
-          escreva("- Voce conseguiu esquivar!! - Não levou nenhum dano")
+          escreva("- Você conseguiu esquivar!! - Não levou nenhum dano")
         }
         senao{
           vida=vida-2
-           escreva("- Voce não conseguiu esquivar!! - Perdeu 2 de vida\n- Vida - ",vida,"/10")
+           escreva("- Você não conseguiu esquivar!! - Perdeu 2 de vida\n- Vida - ",vida,"/10")
         }
       }
       senao se(sttsinteligencia!=5){
-        escreva("Você não conseguer analizar direito o golpe do seu adversario.\nPra qual lado voce esquiva? \n1 - Direita \n2 - Esquerda\n3 - Para trás\n4 - Para frente\n")
+        escreva("Você não consegue analisar direito o golpe do seu adversario.\nPra qual lado Você esquiva? \n1 - Direita \n2 - Esquerda\n3 - Para trás\n4 - Para frente\n")
         leia(choicenum)
         se(chanceesquiva==1 ou chanceesquiva==2){
-          escreva("- Voce conseguiu esquivar!! - Não levou nenhum dano")
+          escreva("- Você conseguiu esquivar!! - Não levou nenhum dano")
         }
         senao{
           vida=vida-2
-           escreva("- Voce não conseguiu esquivar!! - Perdeu 2 de vida\n- Vida - ",vida,"/10")
+           escreva("- Você não conseguiu esquivar!! - Perdeu 2 de vida\n- Vida - ",vida,"/10")
         }
     }
       }enquanto(choicenum!=1 e choicenum!=2 e choicenum!=3 e choicenum!=4)
@@ -541,7 +525,7 @@ se(choice=="s" ou choice=="S"){
     limpa()
     escreva(titulo)
   }enquanto(rounds!=5)
-  escreva("\n- com um movimento rapido você lança a/o ",arma," em direção de Dormammu, fazendo com que a coroa caia de sua cabeça em direção a sua mão.\n- Voce pegou a coroa")
+  escreva("\n- com um movimento rapido você lança a/o ",arma," em direção de Dormammu, fazendo com que sua coroa caia em sua mão.")
   leia(passardialogo)
   limpa()
   escreva(" ▄████▄  ▒█████  ██▓    ▒█████  ▄████▄  ▄▄▄      ██▀███      ▄▄▄      \n▒██▀ ▀█ ▒██▒  ██▓██▒   ▒██▒  ██▒██▀ ▀█ ▒████▄   ▓██ ▒ ██▒   ▒████▄    \n▒▓█    ▄▒██░  ██▒██░   ▒██░  ██▒▓█    ▄▒██  ▀█▄ ▓██ ░▄█ ▒   ▒██  ▀█▄  \n▒▓▓▄ ▄██▒██   ██▒██░   ▒██   ██▒▓▓▄ ▄██░██▄▄▄▄██▒██▀▀█▄     ░██▄▄▄▄██ \n▒ ▓███▀ ░ ████▓▒░██████░ ████▓▒▒ ▓███▀ ░▓█   ▓██░██▓ ▒██▒    ▓█   ▓██▒\n░ ░▒ ▒  ░ ▒░▒░▒░░ ▒░▓  ░ ▒░▒░▒░░ ░▒ ▒  ░▒▒   ▓▒█░ ▒▓ ░▒▓░    ▒▒   ▓▒█░\n  ░  ▒    ░ ▒ ▒░░ ░ ▒  ░ ░ ▒ ▒░  ░  ▒    ▒   ▒▒ ░ ░▒ ░ ▒░     ▒   ▒▒ ░\n░       ░ ░ ░ ▒   ░ ░  ░ ░ ░ ▒ ░         ░   ▒    ░░   ░      ░   ▒   \n░▄████▄  ▒█████  ██▀███░ ▒█████░ ▄▄▄         ░  ░  ░              ░  ░\n▒██▀ ▀█ ▒██▒  ██▓██ ▒ ██▒██▒  ██▒████▄                                \n▒▓█    ▄▒██░  ██▓██ ░▄█ ▒██░  ██▒██  ▀█▄                              \n▒▓▓▄ ▄██▒██   ██▒██▀▀█▄ ▒██   ██░██▄▄▄▄██                             \n▒ ▓███▀ ░ ████▓▒░██▓ ▒██░ ████▓▒░▓█   ▓██▒                             \n░ ░▒ ▒  ░ ▒░▒░▒░░ ▒▓ ░▒▓░ ▒░▒░▒░ ▒▒   ▓▒█░                             \n  ░  ▒    ░ ▒ ▒░  ░▒ ░ ▒░ ░ ▒ ▒░  ▒   ▒▒ ░                             \n░       ░ ░ ░ ▒   ░░   ░░ ░ ░ ▒   ░   ▒                                \n░ ░         ░ ░    ░        ░ ░       ░  ░                             \n░                                                                      \n\n[S/N]\n")
@@ -558,15 +542,15 @@ se(choice=="s" ou choice=="S"){
     u.aguarde(500)
     inteiro tempo
     tempo = u.sorteia(1,6)
-    escreva("Você bota a coroa...\nVoce sente automaticamente sua humanidade saindo do seu corpo e se materializando na sua frente em um corpo novo e inconciente...\nDepois disso voce mata Dormammu fazendo com que a unica parte do seu corpo que sobre seja seu esqueleto. Você percebe que esta se corrompendo a cada segundo. Então utiliza seu ultimo resquicio de humanidade para tentar ir para longe. Poucos tempo depois voce desamaia...")
+    escreva("Você bota a coroa...\nVocê sente automaticamente sua humanidade saindo do seu corpo. a coroa é tão poderosa que materializa sua humanidade em um corpo inconsciente...\nDepois disso Você mata Dormammu fazendo com que a unica parte do seu corpo que sobre seja seu esqueleto. Você percebe que esta se corrompendo a cada segundo. Então utiliza seu ultimo resquicio de humanidade para tentar ir para longe. Pouco tempo depois Você desamaia...")
     leia(passardialogo)
     limpa()
     u.aguarde(4000)
-    escreva("\nVocê acorda em meio a um campo aberto, dernorteado e sem lembranças de nada.\nNa sua frente há um esqueleto deitado, em sua mão um pergaminho. Voce pega o pergaminho e no mesmo instante o esqueleto se desfaz na sua frente.")
+    escreva("\nVocê acorda em meio a um campo aberto, dernorteado e sem lembranças de nada.\nNa sua frente há um esqueleto deitado, em sua mão um pergaminho. Você pega o pergaminho e no mesmo instante o esqueleto se desfaz na sua frente.")
    leia(passardialogo)
-   escreva("- Roube a coroa de Dormmamu e a devolva a estatua do sol e enfim o cilclo acabara.")
+   escreva("- Roube a coroa de Dormammu e a devolva a estatua do sol e enfim o cilclo acabara.")
    leia(passardialogo)
-   escreva("Voce não entende muito de primeiro momento.\nVocê se vira para traz ve uma grande estatua de um cavaleiro com um brasão de sol em sua armadura...")
+   escreva("Você não entende muito num primeiro momento.\nVocê se vira para traz ve uma grande estatua de um cavaleiro com um brasão de sol em sua armadura...")
    limpa()
    escreva("  ███████▓███▄ ▄███▓\n▓██   ▓██▓██▒▀█▀ ██▒\n▒████ ▒██▓██    ▓██░\n░▓█▒  ░██▒██    ▒██ \n░▒█░  ░██▒██▒   ░██▒\n ▒ ░  ░▓ ░ ▒░   ░  ░\n ░     ▒ ░  ░      ░\n ░ ░   ▒ ░      ░   \n       ░        ░    "
 )
@@ -577,7 +561,7 @@ se(choice=="s" ou choice=="S"){
 
   }
   senao se(choice=="n" ou choice=="N"){
-    escreva("- Voce não colocou a coroa. Dormammu te matou e venceu, agora ele conseguiu trazer o inferno para terra...\n  ▄████ ▄▄▄      ███▄ ▄███▓█████     ▒█████  ██▒   █▓█████ ██▀███  \n ██▒ ▀█▒████▄   ▓██▒▀█▀ ██▓█   ▀    ▒██▒  ██▓██░   █▓█   ▀▓██ ▒ ██▒\n▒██░▄▄▄▒██  ▀█▄ ▓██    ▓██▒███      ▒██░  ██▒▓██  █▒▒███  ▓██ ░▄█ ▒\n░▓█  ██░██▄▄▄▄██▒██    ▒██▒▓█  ▄    ▒██   ██░ ▒██ █░▒▓█  ▄▒██▀▀█▄  \n░▒▓███▀▒▓█   ▓██▒██▒   ░██░▒████▒   ░ ████▓▒░  ▒▀█░ ░▒████░██▓ ▒██▒\n ░▒   ▒ ▒▒   ▓▒█░ ▒░   ░  ░░ ▒░ ░   ░ ▒░▒░▒░   ░ ▐░ ░░ ▒░ ░ ▒▓ ░▒▓░\n  ░   ░  ▒   ▒▒ ░  ░      ░░ ░  ░     ░ ▒ ▒░   ░ ░░  ░ ░  ░ ░▒ ░ ▒░\n░ ░   ░  ░   ▒  ░      ░     ░      ░ ░ ░ ▒      ░░    ░    ░░   ░ \n      ░      ░  ░      ░     ░  ░       ░ ░       ░    ░  ░  ░     \n                                                 ░                  ")
+    escreva("- Você não colocou a coroa. Dormammu te matou e venceu, agora ele conseguiu trazer o inferno para terra...\n  ▄████ ▄▄▄      ███▄ ▄███▓█████     ▒█████  ██▒   █▓█████ ██▀███  \n ██▒ ▀█▒████▄   ▓██▒▀█▀ ██▓█   ▀    ▒██▒  ██▓██░   █▓█   ▀▓██ ▒ ██▒\n▒██░▄▄▄▒██  ▀█▄ ▓██    ▓██▒███      ▒██░  ██▒▓██  █▒▒███  ▓██ ░▄█ ▒\n░▓█  ██░██▄▄▄▄██▒██    ▒██▒▓█  ▄    ▒██   ██░ ▒██ █░▒▓█  ▄▒██▀▀█▄  \n░▒▓███▀▒▓█   ▓██▒██▒   ░██░▒████▒   ░ ████▓▒░  ▒▀█░ ░▒████░██▓ ▒██▒\n ░▒   ▒ ▒▒   ▓▒█░ ▒░   ░  ░░ ▒░ ░   ░ ▒░▒░▒░   ░ ▐░ ░░ ▒░ ░ ▒▓ ░▒▓░\n  ░   ░  ▒   ▒▒ ░  ░      ░░ ░  ░     ░ ▒ ▒░   ░ ░░  ░ ░  ░ ░▒ ░ ▒░\n░ ░   ░  ░   ▒  ░      ░     ░      ░ ░ ░ ▒      ░░    ░    ░░   ░ \n      ░      ░  ░      ░     ░  ░       ░ ░       ░    ░  ░  ░     \n                                                 ░                  ")
   }
   }enquanto(choice=="n" e choice=="N" e choice=="s" e choice=="S")
 
